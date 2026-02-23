@@ -1,4 +1,4 @@
 function showWish() {
     document.getElementById("wish").innerHTML =
-    "You are not just becoming a doctor... you are becoming someone's hope ❤️";
+    "Happy Birthday Nikhitha Sri ❤️ The world will know you as a Doctor, but I will always know you as my amazing sister.";
 }
