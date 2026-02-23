@@ -24,7 +24,11 @@ function showWish() {
 
     // 🎵 Play Naah song
     const music = document.getElementById("bdayMusic");
-    if (music) {
-        music.play();
-    }
+
+if (music) {
+    music.currentTime = 0;
+    music.play().catch(() => {
+        console.log("Autoplay blocked");
+    });
+}
 }
