@@ -1,8 +1,17 @@
 body {
     font-family: Arial;
     background: linear-gradient(to right,#ffe6f0,#e6f7ff);
-    text-align: center;
     margin: 0;
+    text-align: center;
+}
+
+/* Center content on screen */
+.container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
