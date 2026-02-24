@@ -1,34 +1,18 @@
-function showWish() {
+<div class="container">
 
-    const text = "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
-    let i = 0;
+    <h1>Happy Birthday Dr. Nikhitha Sri 👩‍⚕️</h1>
 
-    document.getElementById("wish").innerHTML = "";
+    <img src="photo1.jpeg" class="main-img">
 
-    function typing() {
-        if (i < text.length) {
-            document.getElementById("wish").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, 40);
-        }
-    }
+    <audio id="bdayMusic">
+        <source src="naah.mpeg" type="audio/mpeg">
+    </audio>
 
-    typing();
+    <button onclick="showWish()">Click for Surprise 🎁</button>
 
-    // Confetti effect
-    confetti({
-        particleCount: 200,
-        spread: 120,
-        origin: { y: 0.6 }
-    });
+    <h2 id="wish"></h2>
 
-    // 🎵 Play Naah song
-    const music = document.getElementById("bdayMusic");
+</div>
 
-if (music) {
-    music.currentTime = 0;
-    music.play().catch(() => {
-        console.log("Autoplay blocked");
-    });
-}
-}
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
