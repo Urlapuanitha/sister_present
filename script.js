@@ -1,42 +1,49 @@
-// 🎵 GLOBAL MUSIC OBJECT
+// 🎵 GLOBAL MUSIC
 let music = new Audio("naah.mpeg");
-music.loop = true; // keeps playing continuously
+music.loop = true;
 
+// Surprise button function (Home page only)
 function showWish() {
 
-    // Save music state
+    // remember music state
     localStorage.setItem("musicPlaying", "true");
 
-    // Play music
     music.play();
 
-    // Typing message
-    const text = "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
-    let i = 0;
-
+    // typing message ONLY if element exists
     const wishElement = document.getElementById("wish");
-    wishElement.innerHTML = "";
 
-    function typing() {
-        if (i < text.length) {
-            wishElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, 40);
+    if (wishElement) {
+
+        const text =
+        "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
+
+        let i = 0;
+        wishElement.innerHTML = "";
+
+        function typing() {
+            if (i < text.length) {
+                wishElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 40);
+            }
+        }
+
+        typing();
+
+        // confetti only on home page
+        if (typeof confetti !== "undefined") {
+            confetti({
+                particleCount: 200,
+                spread: 120,
+                origin: { y: 0.6 }
+            });
         }
     }
-
-    typing();
-
-    // Confetti
-    confetti({
-        particleCount: 200,
-        spread: 120,
-        origin: { y: 0.6 }
-    });
 }
 
 
-// ✅ AUTO PLAY ON ALL PAGES
+// ✅ Auto play music on ALL pages
 window.onload = function () {
     if (localStorage.getItem("musicPlaying") === "true") {
         music.play();
