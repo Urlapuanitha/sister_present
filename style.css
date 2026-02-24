@@ -151,3 +151,27 @@ button:hover {
         transform: translateX(0);
     }
 }
+@media (max-width: 600px) {
+
+    nav {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .main-img {
+        width: 180px;
+    }
+
+    .gallery img {
+        width: 140px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
