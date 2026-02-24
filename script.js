@@ -1,18 +1,30 @@
-<div class="container">
+function showWish() {
 
-    <h1>Happy Birthday Dr. Nikhitha Sri 👩‍⚕️</h1>
+    // Typing Message
+    const text = "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
+    let i = 0;
 
-    <img src="photo1.jpeg" class="main-img">
+    const wishElement = document.getElementById("wish");
+    wishElement.innerHTML = "";
 
-    <audio id="bdayMusic">
-        <source src="naah.mpeg" type="audio/mpeg">
-    </audio>
+    function typing() {
+        if (i < text.length) {
+            wishElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 40);
+        }
+    }
 
-    <button onclick="showWish()">Click for Surprise 🎁</button>
+    typing();
 
-    <h2 id="wish"></h2>
+    // 🎉 Confetti
+    confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
 
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
+    // 🎵 PLAY SONG (Guaranteed Method)
+    const music = new Audio("naah.mpeg");
+    music.play();
+}
