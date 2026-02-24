@@ -1,51 +1,49 @@
-// 🎵 GLOBAL MUSIC
-let music = new Audio("naah.mpeg");
-music.loop = true;
-
-// Surprise button function (Home page only)
+// Play music on surprise button (Home page)
 function showWish() {
 
-    // remember music state
-    localStorage.setItem("musicPlaying", "true");
+    // remember music started
+    localStorage.setItem("musicPlaying", "yes");
 
-    music.play();
+    const music = document.getElementById("bgMusic");
+    if (music) {
+        music.play();
+    }
 
-    // typing message ONLY if element exists
     const wishElement = document.getElementById("wish");
+    if (!wishElement) return;
 
-    if (wishElement) {
+    const text =
+    "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
 
-        const text =
-        "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
+    let i = 0;
+    wishElement.innerHTML = "";
 
-        let i = 0;
-        wishElement.innerHTML = "";
-
-        function typing() {
-            if (i < text.length) {
-                wishElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 40);
-            }
+    function typing() {
+        if (i < text.length) {
+            wishElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 40);
         }
+    }
 
-        typing();
+    typing();
 
-        // confetti only on home page
-        if (typeof confetti !== "undefined") {
-            confetti({
-                particleCount: 200,
-                spread: 120,
-                origin: { y: 0.6 }
-            });
-        }
+    if (typeof confetti !== "undefined") {
+        confetti({
+            particleCount: 200,
+            spread: 120,
+            origin: { y: 0.6 }
+        });
     }
 }
 
 
-// ✅ Auto play music on ALL pages
+// ✅ Auto resume music on every page
 window.onload = function () {
-    if (localStorage.getItem("musicPlaying") === "true") {
+
+    const music = document.getElementById("bgMusic");
+
+    if (localStorage.getItem("musicPlaying") === "yes" && music) {
         music.play();
     }
 };
