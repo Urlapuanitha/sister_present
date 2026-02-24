@@ -59,3 +59,6 @@ setInterval(() => {
     }, 5000);
 
 }, 800);
+function toggleDarkMode() {
+    document.body.classList.toggle("darkMode");
+}
