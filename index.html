@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Birthday Nikhitha Sri</title>
+    <title>Happy Birthday Nikhitha Sri ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -9,26 +9,56 @@
 
 <nav>
     <h2>🎂 Happy Birthday 🎂</h2>
-    <a href="index.html">Home</a>
-    <a href="journey.html">Journey</a>
-    <a href="gallery.html">Memories</a>
-    <a href="message.html">Message</a>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('journey')">Journey</a>
+    <a href="#" onclick="showSection('gallery')">Memories</a>
+    <a href="#" onclick="showSection('message')">Message</a>
 </nav>
 
-<div class="container">
-
+<!-- HOME -->
+<div id="home" class="section">
     <h1>Happy Birthday Dr. Nikhitha Sri 👩‍⚕️</h1>
 
     <img src="photo1.jpeg" class="main-img">
 
-    <button onclick="showWish()">Click for Surprise 🎁</button>
+    <button onclick="startSurprise()">Click for Surprise 🎁</button>
 
     <h2 id="wish"></h2>
-
 </div>
 
-<!-- Music -->
-<audio id="bgMusic" loop hidden>
+<!-- JOURNEY -->
+<div id="journey" class="section" style="display:none;">
+    <h1>MBBS Journey 🩺</h1>
+    <p>📚 NEET Preparation — Endless dedication</p>
+    <p>🏥 First Year — Anatomy survivor</p>
+    <p>💉 Second Year — Growing stronger</p>
+    <p>👩‍⚕️ Third Year — Future Doctor loading...</p>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="section" style="display:none;">
+    <h1>Our Memories 📸</h1>
+    <div class="gallery">
+        <img src="photo1.jpeg">
+        <img src="photo2.jpeg">
+        <img src="photo3.jpeg">
+    </div>
+</div>
+
+<!-- MESSAGE -->
+<div id="message" class="section" style="display:none;">
+    <h1>A Message For You ❤️</h1>
+    <p>
+        Dear Nikhitha Sri,<br><br>
+        Watching you become a doctor makes me proud every day.<br><br>
+        You never gave up despite challenges.<br><br>
+        The world will call you Doctor,
+        but you will always be my amazing sister ❤️.
+    </p>
+</div>
+
+<!-- MUSIC PLAYER (NEVER RELOADS) -->
+<audio id="bgMusic" loop>
     <source src="naah.mpeg" type="audio/mpeg">
 </audio>
 
