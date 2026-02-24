@@ -1,13 +1,9 @@
-// Play music on surprise button (Home page)
 function showWish() {
 
-    // remember music started
     localStorage.setItem("musicPlaying", "yes");
 
     const music = document.getElementById("bgMusic");
-    if (music) {
-        music.play();
-    }
+    if (music) music.play();
 
     const wishElement = document.getElementById("wish");
     if (!wishElement) return;
@@ -37,10 +33,7 @@ function showWish() {
     }
 }
 
-
-// ✅ Auto resume music on every page
 window.onload = function () {
-
     const music = document.getElementById("bgMusic");
 
     if (localStorage.getItem("musicPlaying") === "yes" && music) {
