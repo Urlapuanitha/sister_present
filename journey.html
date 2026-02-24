@@ -1,51 +1,35 @@
-// 🎵 GLOBAL MUSIC
-let music = new Audio("naah.mpeg");
-music.loop = true;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Her Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-// Surprise button function (Home page only)
-function showWish() {
+<body>
 
-    // remember music state
-    localStorage.setItem("musicPlaying", "true");
+<nav>
+    <h2>🎉 Happy Birthday 🎉</h2>
+    <a href="index.html">Home</a>
+    <a href="journey.html">Journey</a>
+    <a href="gallery.html">Memories</a>
+    <a href="message.html">Message</a>
+</nav>
 
-    music.play();
+<div class="container">
+    <h1>Nikhitha Sri's MBBS Journey 🩺</h1>
 
-    // typing message ONLY if element exists
-    const wishElement = document.getElementById("wish");
+    <p>📚 NEET Preparation — Endless dedication</p>
+    <p>🏥 First Year — Anatomy survivor</p>
+    <p>💉 Second Year — Growing stronger</p>
+    <p>👩‍⚕️ Third Year — Future Doctor loading...</p>
+</div>
 
-    if (wishElement) {
+<!-- Hidden Music Player -->
+<audio id="bgMusic" loop hidden>
+    <source src="naah.mpeg" type="audio/mpeg">
+</audio>
 
-        const text =
-        "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
+<script src="script.js"></script>
 
-        let i = 0;
-        wishElement.innerHTML = "";
-
-        function typing() {
-            if (i < text.length) {
-                wishElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 40);
-            }
-        }
-
-        typing();
-
-        // confetti only on home page
-        if (typeof confetti !== "undefined") {
-            confetti({
-                particleCount: 200,
-                spread: 120,
-                origin: { y: 0.6 }
-            });
-        }
-    }
-}
-
-
-// ✅ Auto play music on ALL pages
-window.onload = function () {
-    if (localStorage.getItem("musicPlaying") === "true") {
-        music.play();
-    }
-};
+</body>
+</html>
