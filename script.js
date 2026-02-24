@@ -40,3 +40,22 @@ function startSurprise() {
         origin: { y: 0.6 }
     });
 }
+// Floating hearts animation
+setInterval(() => {
+
+    const heart = document.createElement("div");
+    heart.innerHTML = "💖";
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-20px";
+    heart.style.fontSize = "20px";
+    heart.style.animation = "floatUp 5s linear";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+
+}, 800);
