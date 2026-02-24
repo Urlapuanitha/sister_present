@@ -1,6 +1,16 @@
+// 🎵 GLOBAL MUSIC OBJECT
+let music = new Audio("naah.mpeg");
+music.loop = true; // keeps playing continuously
+
 function showWish() {
 
-    // Typing Message
+    // Save music state
+    localStorage.setItem("musicPlaying", "true");
+
+    // Play music
+    music.play();
+
+    // Typing message
     const text = "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
     let i = 0;
 
@@ -17,14 +27,18 @@ function showWish() {
 
     typing();
 
-    // 🎉 Confetti
+    // Confetti
     confetti({
         particleCount: 200,
         spread: 120,
         origin: { y: 0.6 }
     });
-
-    // 🎵 PLAY SONG (Guaranteed Method)
-    const music = new Audio("naah.mpeg");
-    music.play();
 }
+
+
+// ✅ AUTO PLAY ON ALL PAGES
+window.onload = function () {
+    if (localStorage.getItem("musicPlaying") === "true") {
+        music.play();
+    }
+};
