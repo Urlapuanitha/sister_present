@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Happy Birthday Nikhitha Sri ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,18 +16,20 @@
     <a href="#" onclick="showSection('message')">Message</a>
 </nav>
 
-<!-- HOME -->
+<!-- HOME SECTION -->
 <div id="home" class="section">
     <h1>Happy Birthday Dr. Nikhitha Sri 👩‍⚕️</h1>
 
-    <img src="photo1.jpeg" class="main-img">
+    <img src="photo1.jpeg" class="main-img" width="250">
+
+    <br><br>
 
     <button onclick="startSurprise()">Click for Surprise 🎁</button>
 
     <h2 id="wish"></h2>
 </div>
 
-<!-- JOURNEY -->
+<!-- JOURNEY SECTION -->
 <div id="journey" class="section" style="display:none;">
     <h1>MBBS Journey 🩺</h1>
     <p>📚 NEET Preparation — Endless dedication</p>
@@ -35,29 +38,28 @@
     <p>👩‍⚕️ Third Year — Future Doctor loading...</p>
 </div>
 
-<!-- GALLERY -->
+<!-- GALLERY SECTION -->
 <div id="gallery" class="section" style="display:none;">
     <h1>Our Memories 📸</h1>
-    <div class="gallery">
-        <img src="photo1.jpeg">
-        <img src="photo2.jpeg">
-        <img src="photo3.jpeg">
-    </div>
+
+    <img src="photo1.jpeg" width="200">
+    <img src="photo2.jpeg" width="200">
+    <img src="photo3.jpeg" width="200">
 </div>
 
-<!-- MESSAGE -->
+<!-- MESSAGE SECTION -->
 <div id="message" class="section" style="display:none;">
     <h1>A Message For You ❤️</h1>
+
     <p>
         Dear Nikhitha Sri,<br><br>
         Watching you become a doctor makes me proud every day.<br><br>
-        You never gave up despite challenges.<br><br>
         The world will call you Doctor,
         but you will always be my amazing sister ❤️.
     </p>
 </div>
 
-<!-- MUSIC PLAYER (NEVER RELOADS) -->
+<!-- MUSIC PLAYER -->
 <audio id="bgMusic" loop>
     <source src="naah.mpeg" type="audio/mpeg">
 </audio>
