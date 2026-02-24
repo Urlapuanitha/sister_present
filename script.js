@@ -62,3 +62,20 @@ setInterval(() => {
 function toggleDarkMode() {
     document.body.classList.toggle("darkMode");
 }
+const birthday = new Date("Feb 27, 2026 00:00:00").getTime();
+
+setInterval(() => {
+
+    const now = new Date().getTime();
+    const gap = birthday - now;
+
+    const days = Math.floor(gap / (1000*60*60*24));
+    const hours = Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((gap%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((gap%(1000*60))/1000);
+
+    const cd = document.getElementById("countdown");
+    if(cd)
+        cd.innerHTML =
+        `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left`;
+},1000);
