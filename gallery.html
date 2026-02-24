@@ -19,65 +19,19 @@
 
     <h1>Our Beautiful Memories 📸</h1>
 
-    <p>Every picture tells a story ❤️</p>
-
     <div class="gallery">
-        <img src="photo1.jpeg" alt="Memory 1">
-        <img src="photo2.jpeg" alt="Memory 2">
-        <img src="photo3.jpeg" alt="Memory 3">
+        <img src="photo1.jpeg">
+        <img src="photo2.jpeg">
+        <img src="photo3.jpeg">
     </div>
 
 </div>
-    <script src="script.js"></script>
-    // Play music on surprise button (Home page)
-function showWish() {
 
-    // remember music started
-    localStorage.setItem("musicPlaying", "yes");
+<audio id="bgMusic" loop hidden>
+    <source src="naah.mpeg" type="audio/mpeg">
+</audio>
 
-    const music = document.getElementById("bgMusic");
-    if (music) {
-        music.play();
-    }
-
-    const wishElement = document.getElementById("wish");
-    if (!wishElement) return;
-
-    const text =
-    "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
-
-    let i = 0;
-    wishElement.innerHTML = "";
-
-    function typing() {
-        if (i < text.length) {
-            wishElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, 40);
-        }
-    }
-
-    typing();
-
-    if (typeof confetti !== "undefined") {
-        confetti({
-            particleCount: 200,
-            spread: 120,
-            origin: { y: 0.6 }
-        });
-    }
-}
-
-
-// ✅ Auto resume music on every page
-window.onload = function () {
-
-    const music = document.getElementById("bgMusic");
-
-    if (localStorage.getItem("musicPlaying") === "yes" && music) {
-        music.play();
-    }
-};
+<script src="script.js"></script>
 
 </body>
 </html>
