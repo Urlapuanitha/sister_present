@@ -1,22 +1,32 @@
-function showWish() {
+// Section switching (NO PAGE RELOAD)
+function showSection(sectionId) {
 
-    localStorage.setItem("musicPlaying", "yes");
+    const sections = document.querySelectorAll(".section");
+
+    sections.forEach(sec => {
+        sec.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
+}
+
+
+// Surprise Button
+function startSurprise() {
 
     const music = document.getElementById("bgMusic");
-    if (music) music.play();
-
-    const wishElement = document.getElementById("wish");
-    if (!wishElement) return;
+    music.play();
 
     const text =
     "Happy Birthday Nikhitha Sri ❤️ You are not just becoming a doctor... you are becoming someone's hope.";
 
     let i = 0;
-    wishElement.innerHTML = "";
+    const wish = document.getElementById("wish");
+    wish.innerHTML = "";
 
     function typing() {
         if (i < text.length) {
-            wishElement.innerHTML += text.charAt(i);
+            wish.innerHTML += text.charAt(i);
             i++;
             setTimeout(typing, 40);
         }
@@ -24,19 +34,9 @@ function showWish() {
 
     typing();
 
-    if (typeof confetti !== "undefined") {
-        confetti({
-            particleCount: 200,
-            spread: 120,
-            origin: { y: 0.6 }
-        });
-    }
+    confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
 }
-
-window.onload = function () {
-    const music = document.getElementById("bgMusic");
-
-    if (localStorage.getItem("musicPlaying") === "yes" && music) {
-        music.play();
-    }
-};
