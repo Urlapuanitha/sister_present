@@ -124,3 +124,15 @@ button:hover {
     from { text-shadow: 0 0 10px white; }
     to { text-shadow: 0 0 25px yellow; }
 }
+.darkMode {
+    background: linear-gradient(135deg,#1a1a1a,#000000);
+    color: white;
+}
+
+.darkMode nav {
+    background: rgba(0,0,0,0.6);
+}
+
+.darkMode a {
+    color: #ff99cc;
+}
