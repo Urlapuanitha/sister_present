@@ -201,3 +201,14 @@ button:hover {
         display: none;
     }
 }
+.journey-img {
+    width: 260px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+
+.journey-img:hover {
+    transform: scale(1.05);
+}
